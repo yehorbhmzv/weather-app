@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import { debounce } from 'lodash';
+import _ from 'lodash';
 
 import { getCityData } from "../api/openweathermap";
 
@@ -22,7 +22,7 @@ const Input = () => {
   };
 
   // Debounced function to avoid calling API on every keystroke
-  const debouncedFetchCities = debounce(fetchCities, 500);
+  const debouncedFetchCities = _.debounce(fetchCities, 500);
 
   // Handle input change
   const handleInputChange = (e) => {
