@@ -1,8 +1,9 @@
-import './App.css';
-
+import React from "react";
+import Input from "./components/input";
 function App() {
   return (
-    <div className="App">
+    <div className='w-full h-full'>
+      <Input/>
     </div>
   );
 }
