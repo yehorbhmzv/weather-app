@@ -7,9 +7,11 @@ const degreesToC = (value) => {
 }
 
 const formatData = (data) => {
-  const temperature = {temp: degreesToC(data.main.temp), max: degreesToC(data.main.temp_max), min: degreesToC(data.main.temp_min) }
-  const wind = {}
-  return ({ temperature })
+  const temperature = {temp: degreesToC(data.main.temp), max: degreesToC(data.main.temp_max), min: degreesToC(data.main.temp_min), humidity: data.main.humidity, feel: degreesToC(data.main.feels_like) }
+  const {wind} = data;
+  const info = data.weather[0]
+
+  return ({ temperature, wind, info })
 }
 
 

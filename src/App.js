@@ -28,7 +28,7 @@ function App() {
   return (
       <div className="w-full h-full flex flex-col align-center">
         <Input selectedCity={selectedCity} handleSelectCity={handleCityChange}/>
-        <CityCard selectedCity={selectedCity}/>
+        {cardData && <CityCard selectedCity={selectedCity} data={cardData}/>}
       </div>
   );
 }
