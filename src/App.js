@@ -7,15 +7,23 @@ function App() {
   const [ selectedCity, setSelectedCity ] = useState(null);
   const [ cardData, setCardData ] = useState(null);
 
+
+  useEffect(()=>{
+    const storedValue = localStorage.getItem('city')
+    if(storedValue) {
+      setSelectedCity({value: storedValue, label: storedValue})
+    }
+  },[])
+
   useEffect(() => {
     if (selectedCity) {
       search(selectedCity.value, (data) => {
         setCardData(data);
       });
+    } else {
+      setCardData(null)
     }
   }, [ selectedCity ]);
-
-  console.log(cardData);
 
 
   // Handle city selection
